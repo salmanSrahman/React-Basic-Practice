@@ -4,7 +4,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
-import CountryDetails from './Components/CountryDetails/CountryDetails'
+import CountryDetails from "./Components/CountryDetails/CountryDetails";
+import Home from "./Components/Home/Home";
 
 function App() {
   return (
@@ -12,9 +13,9 @@ function App() {
       <BrowserRouter>
         <Header />
         <Routes>
-          <Route path="/" element={<Countries />} />
+          <Route path="/" element={<Home />} />
           <Route path="/countries" element={<Countries />} />
-          <Route path="/country/:countryId" element={<CountryDetails/>} />
+          <Route path="/country/:countryId" element={<CountryDetails />} />
         </Routes>
         <Footer />
       </BrowserRouter>
