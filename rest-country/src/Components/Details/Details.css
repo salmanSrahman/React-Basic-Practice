@@ -1,0 +1,8 @@
+.details-card {
+
+      box-shadow: black 0px 0px 0px 3px, gray 0px 0px 0px 6px, black 0px 0px 0px 9px, gray 0px 0px 0px 12px, black 0px 0px 0px 15px;
+}
+
+.details-text {
+      padding: 10px 10px 20px 10px;
+}
