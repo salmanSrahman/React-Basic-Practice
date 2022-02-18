@@ -6,7 +6,7 @@ const Details = (props) => {
   const { name, flags, capital, region, population, subregion, languages } =
     props.country;
   return (
-    <div className=" d-flex justify-content-center">
+    <div className="d-flex justify-content-center my-5">
       <div className="details-card">
         <img src={flags.png} alt="" />
         <div className="details-text">
