@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Button, Container, Row } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import HomeCountry from "../HomeCountry/HomeCountry";
 
 const HomeCountries = () => {
@@ -8,7 +9,7 @@ const HomeCountries = () => {
   useEffect(() => {
     fetch("https://restcountries.com/v3.1/all")
       .then((res) => res.json())
-      .then((data) => setCountries(data.slice(0, 9)));
+      .then((data) => setCountries(data.slice(0, 6)));
   });
   return (
     <div className="country-container">
@@ -18,7 +19,14 @@ const HomeCountries = () => {
             <HomeCountry country={country}></HomeCountry>
           ))}
         </Row>
-        <Button variant="primary" className="text-center">See More</Button>
+        <Button variant="primary" className="text-center mt-3 mx-auto d-block">
+          <Link
+            to="/countries"
+            className="text-light fw-bold text-decoration-none"
+          >
+            See More Country
+          </Link>
+        </Button>
       </Container>
     </div>
   );

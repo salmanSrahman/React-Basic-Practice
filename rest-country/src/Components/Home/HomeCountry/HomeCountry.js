@@ -7,11 +7,16 @@ const HomeCountry = (props) => {
   return (
     <div className="country-card">
       <Col>
-        <Card>
+        <Card className="single-card">
           <Card.Img variant="top" src={flags.png} />
           <Card.Body>
             <Card.Title className="fs-3">{name.common}</Card.Title>
-            <Link to={`/country/${cca2}`}>See Details</Link>
+            <Link
+              className="details-btn btn btn-outline-success my-2"
+              to={`/country/${cca2}`}
+            >
+              See Details
+            </Link>
           </Card.Body>
         </Card>
       </Col>
