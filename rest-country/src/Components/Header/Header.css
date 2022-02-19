@@ -1,0 +1,11 @@
+.nav-style {
+      text-decoration: none;
+      padding-left: 30px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #fff;
+}
+
+.nav-style:hover {
+      color: #fff;
+}

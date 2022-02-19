@@ -6,18 +6,30 @@ import "./Header.css";
 const Header = () => {
   return (
     <div>
-      <Navbar bg="light" expand="lg">
+      <Navbar bg="dark" expand="lg">
         <Container>
-          <Navbar.Brand href="#">Navbar scroll</Navbar.Brand>
+          <Navbar.Brand href="#" ClassName="text-light">
+            Navbar scroll
+          </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
           <Navbar.Collapse id="navbarScroll">
             <Nav
-              className="me-auto my-2 my-lg-0"
+              className="ms-auto my-2 my-lg-0"
               style={{ maxHeight: "100px" }}
               navbarScroll
             >
-              <NavLink to="/home">Home</NavLink>
-              <NavLink to="/countries">Country</NavLink>
+              <NavLink className="nav-style" to="/home">
+                Home
+              </NavLink>
+              <NavLink className="nav-style" to="/about">
+                About Us
+              </NavLink>
+              <NavLink className="nav-style" to="/countries">
+                Country
+              </NavLink>
+               <NavLink className="nav-style" to="/contact">
+                Contact Us
+              </NavLink>
             </Nav>
           </Navbar.Collapse>
         </Container>
