@@ -5,6 +5,7 @@ import {
   signInWithPopup,
   GoogleAuthProvider,
   GithubAuthProvider,
+  signOut,
 } from "firebase/auth";
 import firebaseAuthentication from "../../Firebase/Firebase.init";
 
@@ -39,6 +40,13 @@ const GoogleSign = () => {
       setUser(loggedUser);
     });
   };
+  
+  //   ====== sign out part =======
+  const handleSignOut = () => {
+    signOut(auth).then(() => {
+      setUser({});
+    });
+  };
 
   return (
     <div className="mt-5">
@@ -51,7 +59,9 @@ const GoogleSign = () => {
         </div>
       ) : (
         <div>
-          <Button variant="warning">Sign Out</Button>
+          <Button variant="warning" onClick={handleSignOut}>
+            Sign Out
+          </Button>
         </div>
       )}
       <br />
