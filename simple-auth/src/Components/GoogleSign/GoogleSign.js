@@ -1,15 +1,19 @@
 import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
-import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import {
+  getAuth,
+  signInWithPopup,
+  GoogleAuthProvider,
+  GithubAuthProvider,
+} from "firebase/auth";
 import firebaseAuthentication from "../../Firebase/Firebase.init";
 
 firebaseAuthentication();
 
 const GoogleSign = () => {
   const [user, setUser] = useState({});
-
+  const auth = getAuth();
   const handleGoogSign = () => {
-    const auth = getAuth();
     const googleProvider = new GoogleAuthProvider();
     signInWithPopup(auth, googleProvider).then((result) => {
       const { displayName, email, photoURL } = result.user;
@@ -22,9 +26,34 @@ const GoogleSign = () => {
       setUser(loggedUser);
     });
   };
+
+  const handleGithubSign = () => {
+    const githubProvider = new GithubAuthProvider();
+    signInWithPopup(auth, githubProvider).then((result) => {
+      const { displayName, email, photoURL } = result.user;
+      const loggedUser = {
+        name: displayName,
+        email: email,
+        img: photoURL,
+      };
+      setUser(loggedUser);
+    });
+  };
+
   return (
     <div className="mt-5">
-      <Button onClick={handleGoogSign}>Google Sign In</Button>
+      {!user.name ? (
+        <div>
+          <Button onClick={handleGoogSign}>Google Sign In</Button>
+          <Button variant="success" onClick={handleGithubSign}>
+            Github Sign In
+          </Button>
+        </div>
+      ) : (
+        <div>
+          <Button variant="warning">Sign Out</Button>
+        </div>
+      )}
       <br />
       {user.email && (
         <div>
