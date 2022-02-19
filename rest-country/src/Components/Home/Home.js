@@ -1,12 +1,11 @@
 import React from "react";
 import "./Home.css";
-import HomeCountry from "./HomeCountry/HomeCountry";
+import HomeCountries from "./HomeCountries/HomeCountries";
 
 const Home = () => {
   return (
-    <div className="other-style">
-      <h1>This Is Home</h1>
-      <HomeCountry></HomeCountry>
+    <div>
+      <HomeCountries></HomeCountries>
     </div>
   );
 };

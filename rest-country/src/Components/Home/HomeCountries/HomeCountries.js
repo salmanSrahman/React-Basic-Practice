@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Container, Row } from "react-bootstrap";
+import { Button, Container, Row } from "react-bootstrap";
 import HomeCountry from "../HomeCountry/HomeCountry";
 
 const HomeCountries = () => {
@@ -10,18 +10,16 @@ const HomeCountries = () => {
       .then((res) => res.json())
       .then((data) => setCountries(data.slice(0, 9)));
   });
-
   return (
-    <div>
-      <div className="country-container">
-        <Container>
-          <Row xs={1} md={4} className="g-4">
-            {countries.map((country) => (
-              <HomeCountry country={country}></HomeCountry>
-            ))}
-          </Row>
-        </Container>
-      </div>
+    <div className="country-container">
+      <Container>
+        <Row xs={1} md={3} className="g-4">
+          {countries.map((country) => (
+            <HomeCountry country={country}></HomeCountry>
+          ))}
+        </Row>
+        <Button variant="primary" className="text-center">See More</Button>
+      </Container>
     </div>
   );
 };
