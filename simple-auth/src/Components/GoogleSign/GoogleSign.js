@@ -27,6 +27,7 @@ const GoogleSign = () => {
       setUser(loggedUser);
     });
   };
+  // ======= signing by google =======
 
   const handleGithubSign = () => {
     const githubProvider = new GithubAuthProvider();
@@ -40,13 +41,14 @@ const GoogleSign = () => {
       setUser(loggedUser);
     });
   };
-  
-  //   ====== sign out part =======
+  // ======= signing by github =======
+
   const handleSignOut = () => {
     signOut(auth).then(() => {
       setUser({});
     });
   };
+  //   ====== sign out part =======
 
   return (
     <div className="mt-5">
