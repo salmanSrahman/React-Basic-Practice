@@ -1,12 +1,17 @@
 import React, { useState } from "react";
 import { Button, Container, Form } from "react-bootstrap";
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
 
 const LoginForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [isLogIn, setIsLogIn] = useState(false);
+  const auth = getAuth();
 
   const handleEmail = (e) => {
     e.preventDefault();
@@ -35,11 +40,30 @@ const LoginForm = () => {
       );
       return true;
     }
-    const auth = getAuth();
-    createUserWithEmailAndPassword(auth, email, password).then((result) => {
-      console.log(result.user);
-      setError("");
-    });
+
+    isLogIn ? logInOldUser(email, password) : createNewUser(email, password);
+  };
+
+  const createNewUser = (email, password) => {
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((result) => {
+        console.log(result.user);
+        setError("");
+      })
+      .catch((error) => {
+        setError(error.message);
+      });
+  };
+
+  const logInOldUser = (email, password) => {
+    signInWithEmailAndPassword(auth, email, password)
+      .then((result) => {
+        console.log(result.user);
+        setError("");
+      })
+      .catch((error) => {
+        setError(error.message);
+      });
   };
 
   return (
