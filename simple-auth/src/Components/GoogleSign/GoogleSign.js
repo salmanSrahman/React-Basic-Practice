@@ -8,6 +8,7 @@ import {
   signOut,
 } from "firebase/auth";
 import firebaseAuthentication from "../../Firebase/Firebase.init";
+import { Container } from "react-bootstrap";
 
 firebaseAuthentication();
 
@@ -51,30 +52,34 @@ const GoogleSign = () => {
   //   ====== sign out part =======
 
   return (
-    <div className="mt-5">
-      {!user.name ? (
-        <div>
-          <Button onClick={handleGoogSign}>Google Sign In</Button>
-          <Button variant="success" onClick={handleGithubSign}>
-            Github Sign In
-          </Button>
-        </div>
-      ) : (
-        <div>
-          <Button variant="warning" onClick={handleSignOut}>
-            Sign Out
-          </Button>
-        </div>
-      )}
-      <br />
-      {user.email && (
-        <div>
-          <h3>{user.name}</h3>
-          <h3>{user.email}</h3>
-          <img src={user.img} alt="" />
-        </div>
-      )}
-    </div>
+    <Container>
+      <div className="mt-5">
+        {!user.name ? (
+          <div>
+            <Button onClick={handleGoogSign} className="me-2">
+              Google Sign In
+            </Button>
+            <Button variant="success" onClick={handleGithubSign}>
+              Github Sign In
+            </Button>
+          </div>
+        ) : (
+          <div>
+            <Button variant="warning" onClick={handleSignOut}>
+              Sign Out
+            </Button>
+          </div>
+        )}
+        <br />
+        {user.email && (
+          <div>
+            <h3>{user.name}</h3>
+            <h3>{user.email}</h3>
+            <img src={user.img} alt="" />
+          </div>
+        )}
+      </div>
+    </Container>
   );
 };
 
