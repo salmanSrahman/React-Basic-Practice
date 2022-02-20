@@ -6,14 +6,21 @@ const LoginForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [isLogIn, setIsLogIn] = useState(false);
 
   const handleEmail = (e) => {
     e.preventDefault();
     setEmail(e.target.value);
   };
+
   const handlePassword = (e) => {
     e.preventDefault();
     setPassword(e.target.value);
+  };
+
+  const toggleLogin = (e) => {
+    e.preventDefault();
+    setIsLogIn(e.target.checked);
   };
 
   const handleRegistraition = (e) => {
@@ -38,6 +45,9 @@ const LoginForm = () => {
   return (
     <div>
       <Container>
+        <h1 className="text-success">
+          Please {isLogIn ? "LogIn" : "Register"}
+        </h1>
         <form onSubmit={handleRegistraition}>
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Email address</Form.Label>
@@ -66,11 +76,15 @@ const LoginForm = () => {
             {error}
           </Form.Text>
           <Form.Group className="my-3" controlId="formBasicCheckbox">
-            <Form.Check type="checkbox" label="Check me out" />
+            <Form.Check
+              type="checkbox"
+              label="Already Registered?"
+              onChange={toggleLogin}
+            />
           </Form.Group>
 
           <Button variant="primary" type="submit">
-            Submit
+            {isLogIn ? "Login" : "Register"}
           </Button>
         </form>
       </Container>
