@@ -22,9 +22,16 @@ const LoginForm = () => {
       setError("Password Should Have At Least 6 Character");
       return;
     }
+    if (!/(?=.*[a-z])(?=.*[A-Z])/.test(password)) {
+      setError(
+        "Password Should Have At Least One Uppercase & Lowercase Letter"
+      );
+      return true;
+    }
     const auth = getAuth();
     createUserWithEmailAndPassword(auth, email, password).then((result) => {
       console.log(result.user);
+      setError("");
     });
   };
 
