@@ -118,7 +118,11 @@ const LoginForm = () => {
           <Button variant="primary" type="submit">
             {isLogIn ? "Login" : "Register"}
           </Button>
-          <Button variant="danger" className="ms-2">
+          <Button
+            variant="danger"
+            className="ms-2"
+            onClick={handleResetPassword}
+          >
             Reset Password
           </Button>
         </form>
