@@ -37,6 +37,12 @@ const LoginForm = () => {
     setIsLogIn(e.target.checked);
   };
 
+  const setDisplayName = () => {
+    updateProfile(auth.currentUser, { displayName: userName }).then(
+      (result) => {}
+    );
+  };
+
   const handleRegistraition = (e) => {
     e.preventDefault();
     if (password.length < 6) {
@@ -59,6 +65,7 @@ const LoginForm = () => {
         console.log(result.user);
         setError("");
         emailVerification();
+        setDisplayName();
       })
       .catch((error) => {
         setError(error.message);
