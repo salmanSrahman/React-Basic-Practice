@@ -96,7 +96,7 @@ const LoginForm = () => {
     <div>
       <Container>
         <h1 className="text-success">
-          Please {isLogIn ? "LogIn" : "Register"}
+          Please {isLogIn ? "Login" : "Register"}
         </h1>
         {!isLogIn && (
           <Form.Group className="mb-3" controlId="formBasicPassword">
