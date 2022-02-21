@@ -9,11 +9,17 @@ import {
 } from "firebase/auth";
 
 const LoginForm = () => {
+  const [userName, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [isLogIn, setIsLogIn] = useState(false);
   const auth = getAuth();
+
+  const handleUserName = (e) => {
+    e.preventDefault();
+    setUserName(e.target.value)
+  };
 
   const handleEmail = (e) => {
     e.preventDefault();
@@ -84,6 +90,14 @@ const LoginForm = () => {
         <h1 className="text-success">
           Please {isLogIn ? "LogIn" : "Register"}
         </h1>
+        <Form.Group className="mb-3" controlId="formBasicPassword">
+          <Form.Label>User Name</Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="Password"
+            onBlur={handleUserName}
+          />
+        </Form.Group>
         <form onSubmit={handleRegistraition}>
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Email address</Form.Label>
