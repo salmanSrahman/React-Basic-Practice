@@ -5,6 +5,7 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   sendEmailVerification,
+  sendPasswordResetEmail,
 } from "firebase/auth";
 
 const LoginForm = () => {
@@ -72,6 +73,9 @@ const LoginForm = () => {
     sendEmailVerification(auth.currentUser).then((result) => {
       console.log(result);
     });
+  };
+  const handleResetPassword = () => {
+    sendPasswordResetEmail(auth, email).then((result) => {});
   };
 
   return (
