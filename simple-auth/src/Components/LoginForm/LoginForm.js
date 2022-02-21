@@ -6,6 +6,7 @@ import {
   signInWithEmailAndPassword,
   sendEmailVerification,
   sendPasswordResetEmail,
+  updateProfile,
 } from "firebase/auth";
 
 const LoginForm = () => {
@@ -18,7 +19,7 @@ const LoginForm = () => {
 
   const handleUserName = (e) => {
     e.preventDefault();
-    setUserName(e.target.value)
+    setUserName(e.target.value);
   };
 
   const handleEmail = (e) => {
@@ -90,14 +91,16 @@ const LoginForm = () => {
         <h1 className="text-success">
           Please {isLogIn ? "LogIn" : "Register"}
         </h1>
-        <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Label>User Name</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="Password"
-            onBlur={handleUserName}
-          />
-        </Form.Group>
+        {!isLogIn && (
+          <Form.Group className="mb-3" controlId="formBasicPassword">
+            <Form.Label>User Name</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Password"
+              onBlur={handleUserName}
+            />
+          </Form.Group>
+        )}
         <form onSubmit={handleRegistraition}>
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Email address</Form.Label>
