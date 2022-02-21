@@ -4,6 +4,7 @@ import {
   getAuth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  sendEmailVerification,
 } from "firebase/auth";
 
 const LoginForm = () => {
@@ -49,6 +50,7 @@ const LoginForm = () => {
       .then((result) => {
         console.log(result.user);
         setError("");
+        emailVerification();
       })
       .catch((error) => {
         setError(error.message);
@@ -64,6 +66,12 @@ const LoginForm = () => {
       .catch((error) => {
         setError(error.message);
       });
+  };
+
+  const emailVerification = () => {
+    sendEmailVerification(auth.currentUser).then((result) => {
+      console.log(result);
+    });
   };
 
   return (
