@@ -9,6 +9,7 @@ firebaseInitialization();
 const AdmissionForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
   const auth = getAuth();
 
@@ -21,10 +22,17 @@ const AdmissionForm = () => {
 
   const handleRegistration = (e) => {
     e.preventDefault();
-    createUserWithEmailAndPassword(auth, email, password).then((result) => {
-      console.log(result.user);
-    });
-    console.log(email, password);
+    if (password.length < 6) {
+      setError("Password Should Have At Least 6 Characters.");
+    }
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((result) => {
+        console.log(result.user);
+        setError("");
+      })
+      .catch((error) => {
+        setError(error.message);
+      });
   };
 
   return (
@@ -53,6 +61,12 @@ const AdmissionForm = () => {
           />
         </Form.Group>
         <Form.Group className="mb-3" id="formGridCheckbox">
+          <Form.Text
+            id="passwordHelpBlock"
+            className="text-danger fs-6 fw-bold"
+          >
+            {error}
+          </Form.Text>
           <Form.Check type="checkbox" label="Check me out" />
         </Form.Group>
         <Button variant="primary" type="submit">
