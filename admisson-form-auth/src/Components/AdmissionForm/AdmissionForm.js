@@ -1,9 +1,13 @@
 import React, { useState } from "react";
 import { Button, Container, Form } from "react-bootstrap";
 import firebaseInitialization from "../../Firebase/furebase.init";
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  sendEmailVerification,
+  sendPasswordResetEmail,
+} from "firebase/auth";
 import "./AdmissionForm.css";
-
 
 firebaseInitialization();
 
@@ -41,7 +45,25 @@ const AdmissionForm = () => {
       .then((result) => {
         console.log(result.user);
         setError("");
+        handleEmailVerification();
       })
+      .catch((error) => {
+        setError(error.message);
+      });
+  };
+
+  const handleEmailVerification = () => {
+    sendEmailVerification(auth.currentUser)
+      .then(() => {})
+      .catch((error) => {
+        setError(error.message);
+      });
+  };
+
+  const handlePasswordReset = (e) => {
+    e.preventDefault();
+    sendPasswordResetEmail(auth, email)
+      .then(() => {})
       .catch((error) => {
         setError(error.message);
       });
@@ -88,7 +110,12 @@ const AdmissionForm = () => {
         <Button variant="primary" type="submit">
           {isLogin ? "Login" : "Registration"}
         </Button>
-        <Button variant="danger" type="submit" className="ms-2">
+        <Button
+          variant="danger"
+          type="submit"
+          className="ms-2"
+          onClick={handlePasswordReset}
+        >
           Reset Password
         </Button>
       </Form>
