@@ -76,6 +76,12 @@ const AdmissionForm = () => {
           Please {isLogin ? "Login" : "Register"}
         </Form.Text>
 
+        {!isLogin && (
+          <Form.Group className="mb-3" controlId="formGroupEmail">
+            <Form.Label>Full Name</Form.Label>
+            <Form.Control type="text" placeholder="Enter name" required />
+          </Form.Group>
+        )}
         <Form.Group className="mb-3" controlId="formGroupEmail">
           <Form.Label>Email address</Form.Label>
           <Form.Control
