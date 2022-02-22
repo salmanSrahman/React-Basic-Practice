@@ -24,6 +24,11 @@ const AdmissionForm = () => {
     e.preventDefault();
     if (password.length < 6) {
       setError("Password Should Have At Least 6 Characters.");
+      return;
+    }
+    if (!/(?=.*[A-Z])(?=.*[a-z])/.test(password)) {
+      setError("Password Should Have At Least One Uppercase & Lowercase.");
+      return true;
     }
     createUserWithEmailAndPassword(auth, email, password)
       .then((result) => {
