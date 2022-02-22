@@ -1,10 +1,16 @@
 import React, { useState } from "react";
 import { Button, Container, Form } from "react-bootstrap";
+import firebaseInitialization from "../../Firebase/furebase.init";
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import "./AdmissionForm.css";
+
+firebaseInitialization();
 
 const AdmissionForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const auth = getAuth();
 
   const handleEmail = (e) => {
     setEmail(e.target.value);
@@ -15,6 +21,9 @@ const AdmissionForm = () => {
 
   const handleRegistration = (e) => {
     e.preventDefault();
+    createUserWithEmailAndPassword(auth, email, password).then((result) => {
+      console.log(result.user);
+    });
     console.log(email, password);
   };
 
