@@ -4,20 +4,27 @@ import firebaseInitialization from "../../Firebase/furebase.init";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import "./AdmissionForm.css";
 
+
 firebaseInitialization();
 
 const AdmissionForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-
+  const [isLogin, setIsLogin] = useState(false);
   const auth = getAuth();
 
   const handleEmail = (e) => {
+    e.preventDefault();
     setEmail(e.target.value);
   };
   const handlePassword = (e) => {
+    e.preventDefault();
     setPassword(e.target.value);
+  };
+  const toggleLogin = (e) => {
+    e.preventDefault();
+    setIsLogin(e.target.checked);
   };
 
   const handleRegistration = (e) => {
@@ -44,7 +51,7 @@ const AdmissionForm = () => {
     <Container>
       <Form onSubmit={handleRegistration}>
         <Form.Text id="passwordHelpBlock" className="fs-1 text-dark fw-lighter">
-          Please Register
+          Please {isLogin ? "Login" : "Register"}
         </Form.Text>
 
         <Form.Group className="mb-3" controlId="formGroupEmail">
@@ -72,10 +79,14 @@ const AdmissionForm = () => {
           >
             {error}
           </Form.Text>
-          <Form.Check type="checkbox" label="Check me out" />
+          <Form.Check
+            type="checkbox"
+            label="Check me out"
+            onChange={toggleLogin}
+          />
         </Form.Group>
         <Button variant="primary" type="submit">
-          Registration
+          {isLogin ? "Login" : "Registration"}
         </Button>
         <Button variant="danger" type="submit" className="ms-2">
           Reset Password
