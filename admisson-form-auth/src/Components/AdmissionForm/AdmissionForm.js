@@ -94,7 +94,7 @@ const AdmissionForm = () => {
   return (
     <Container>
       <Form onSubmit={handleRegistration}>
-        <Form.Text id="passwordHelpBlock" className="fs-1 text-dark fw-lighter">
+        <Form.Text className="fs-1 text-dark fw-lighter">
           Please {isLogin ? "Login" : "Register"}
         </Form.Text>
 
