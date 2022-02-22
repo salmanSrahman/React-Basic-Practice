@@ -6,17 +6,25 @@ import {
   createUserWithEmailAndPassword,
   sendEmailVerification,
   sendPasswordResetEmail,
+  updateProfile,
+  signInWithEmailAndPassword,
 } from "firebase/auth";
 import "./AdmissionForm.css";
 
 firebaseInitialization();
 
 const AdmissionForm = () => {
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [isLogin, setIsLogin] = useState(false);
   const auth = getAuth();
+
+  const handleName = (e) => {
+    e.preventDefault();
+    setName(e.target.value);
+  };
 
   const handleEmail = (e) => {
     e.preventDefault();
@@ -25,6 +33,9 @@ const AdmissionForm = () => {
   const handlePassword = (e) => {
     e.preventDefault();
     setPassword(e.target.value);
+  };
+  const updateUserInfo = (e) => {
+    updateProfile(auth.currentUser, { displayName: name }).then((result) => {});
   };
   const toggleLogin = (e) => {
     e.preventDefault();
@@ -41,11 +52,22 @@ const AdmissionForm = () => {
       setError("Password Should Have At Least One Uppercase & Lowercase.");
       return true;
     }
+    isLogin ? loginUser(email, password) : creatNewUser(email, password);
+  };
+
+  const loginUser = (email, password) => {
+    signInWithEmailAndPassword(auth, email, password).then((result) => {
+      console.log(result.user);
+    });
+  };
+
+  const creatNewUser = (email, password) => {
     createUserWithEmailAndPassword(auth, email, password)
       .then((result) => {
         console.log(result.user);
         setError("");
         handleEmailVerification();
+        updateUserInfo();
       })
       .catch((error) => {
         setError(error.message);
@@ -79,7 +101,12 @@ const AdmissionForm = () => {
         {!isLogin && (
           <Form.Group className="mb-3" controlId="formGroupEmail">
             <Form.Label>Full Name</Form.Label>
-            <Form.Control type="text" placeholder="Enter name" required />
+            <Form.Control
+              type="text"
+              placeholder="Enter name"
+              onBlur={handleName}
+              required
+            />
           </Form.Group>
         )}
         <Form.Group className="mb-3" controlId="formGroupEmail">
