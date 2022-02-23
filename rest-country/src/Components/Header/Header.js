@@ -28,7 +28,7 @@ const Header = () => {
                 Country
               </NavLink>
               <NavLink className="btn btn-outline-warning ms-3" to="/contact">
-                Become Member
+                Become Member / Login
               </NavLink>
             </Nav>
           </Navbar.Collapse>
