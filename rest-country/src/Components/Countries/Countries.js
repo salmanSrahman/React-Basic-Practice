@@ -7,17 +7,6 @@ const Countries = () => {
   const [countries, setCountries] = useState([]);
   const [displaySearch, setDisplaySearch] = useState([]);
 
-
-
-  const handleSearch = (e) => {
-    const searchText = e.target.value;
-    const searchCountry = countries.filter((country) =>
-      country.name.common.toLowerCase().includes(searchText.toLowerCase())
-    );
-    setDisplaySearch(searchCountry);
-  };
-
-
   useEffect(() => {
     fetch("https://restcountries.com/v3.1/all")
       .then((res) => res.json())
@@ -25,15 +14,16 @@ const Countries = () => {
         setCountries(data);
         setDisplaySearch(data);
       });
-  }, [countries]);
+  }, []);
 
-  // const handleSearch = (e) => {
-  //   const searchText = e.target.value;
-  //   const searchCountry = countries.filter((country) =>
-  //     country.name.common.toLowerCase().includes(searchText.toLowerCase())
-  //   );
-  //   setDisplaySearch(searchCountry);
-  // };
+  const handleSearch = (e) => {
+    const searchText = e.target.value;
+    const searchCountry = countries.filter(
+      (country) =>
+        country.name.common.toLowerCase() === searchText.toLowerCase()
+    );
+    setDisplaySearch(searchCountry);
+  };
 
   return (
     <>
