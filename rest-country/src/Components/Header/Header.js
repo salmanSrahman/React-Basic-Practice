@@ -27,8 +27,8 @@ const Header = () => {
               <NavLink className="nav-style" to="/countries">
                 Country
               </NavLink>
-               <NavLink className="nav-style" to="/contact">
-                Contact Us
+              <NavLink className="btn btn-outline-warning ms-3" to="/contact">
+                Become Member
               </NavLink>
             </Nav>
           </Navbar.Collapse>
