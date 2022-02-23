@@ -21,17 +21,26 @@ const Details = (props) => {
           <h6>Subregion : {subregion}</h6>
           <h6>Population : {population}</h6>
           <h5>Language : {languages.fra}</h5>
-          <Button
-            variant="outline-primary"
-            onClick={() => {
-              navigate("/home");
-            }}
-          >
-            Back Home
-          </Button>
-          <Button className="ms-2" variant="outline-warning">
-            Back Countries
-          </Button>
+          <div className="py-2">
+            <Button
+              className="fw-bold"
+              variant="outline-primary"
+              onClick={() => {
+                navigate("/home");
+              }}
+            >
+              Back Home
+            </Button>
+            <Button
+              className="ms-2 fw-bold"
+              variant="outline-warning"
+              onClick={() => {
+                navigate("/countries");
+              }}
+            >
+              Back Countries
+            </Button>
+          </div>
         </div>
       </div>
     </div>
