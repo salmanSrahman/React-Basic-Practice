@@ -2,12 +2,16 @@ import React, { useState } from "react";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import firebaseAuthentication from "../../Firebase/Firebase.init";
 import "./Contact.css";
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
 firebaseAuthentication();
 
 const Contact = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+
+  const auth = getAuth();
 
   const handleEmail = (e) => {
     e.preventDefault();
@@ -21,7 +25,14 @@ const Contact = () => {
 
   const handleRegistration = (e) => {
     e.preventDefault();
-    console.log(email, password);
+    if (password.length < 6) {
+      setError("Password Should Be At Least 6 Characters.");
+      return;
+    }
+    createUserWithEmailAndPassword(auth, email, password).then(
+      (result) => result.user
+    );
+    setError("");
   };
 
   return (
@@ -50,7 +61,8 @@ const Contact = () => {
                   onBlur={handlePassword}
                 />
               </Form.Group>
-              <Form.Group className="mb-3" controlId="formBasicCheckbox">
+              <Form.Text className="text-danger fw-bold">{error}</Form.Text>
+              <Form.Group className="my-2" controlId="formBasicCheckbox">
                 <Form.Check type="checkbox" label="Already registered" />
               </Form.Group>
               <Button variant="primary" type="submit">
