@@ -1,8 +1,13 @@
 import React from "react";
+import { Button } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 import "./Details.css";
 
 const Details = (props) => {
   console.log(props.country);
+
+  let navigate = useNavigate();
+
   const { name, flags, capital, region, population, subregion, languages } =
     props.country;
   return (
@@ -16,6 +21,17 @@ const Details = (props) => {
           <h6>Subregion : {subregion}</h6>
           <h6>Population : {population}</h6>
           <h5>Language : {languages.fra}</h5>
+          <Button
+            variant="outline-primary"
+            onClick={() => {
+              navigate("/home");
+            }}
+          >
+            Back Home
+          </Button>
+          <Button className="ms-2" variant="outline-warning">
+            Back Countries
+          </Button>
         </div>
       </div>
     </div>
