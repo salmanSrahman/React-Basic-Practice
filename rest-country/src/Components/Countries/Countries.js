@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Container, Row } from "react-bootstrap";
 import Country from "../Country/Country";
+import Preloader from "../Preloader/Preloader";
 import "./Countries.css";
 
 const Countries = () => {
+  const [preloaderVisibility, setPreloaderVisibility] = useState("block");
   const [countries, setCountries] = useState([]);
   const [displaySearch, setDisplaySearch] = useState([]);
 
@@ -13,6 +15,7 @@ const Countries = () => {
       .then((data) => {
         setCountries(data);
         setDisplaySearch(data);
+        setPreloaderVisibility("none");
       });
   }, []);
 
@@ -36,6 +39,7 @@ const Countries = () => {
       </div>
       <div className="country-container">
         <Container>
+          <Preloader visibility={preloaderVisibility} />
           <Row xs={1} md={4} className="g-3">
             {displaySearch.map((country) => (
               <Country country={country}></Country>
