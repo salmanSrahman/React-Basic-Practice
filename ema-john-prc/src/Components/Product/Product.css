@@ -1,0 +1,13 @@
+.product-container {
+      display: flex;
+      border-bottom: 2px solid gray;
+      padding: 10px;
+}
+
+.product-details {
+      padding-left: 15px;
+}
+
+.product-details h3 {
+      color: blue;
+}
