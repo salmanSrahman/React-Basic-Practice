@@ -21,10 +21,10 @@ const Cart = ({ cart }) => {
         <h2>Items Ordered: {cart.length}</h2>
       </div>
       <div className="cart-details">
-        <h3>Items : {subTotal}</h3>
-        <h3>Total Before Tax : {totalBeforeTax}</h3>
-        <h3>Estimated Tax : {tax}</h3>
-        <h2>Order Total : {total}</h2>
+        <h3>Items : {subTotal.toFixed(2)}</h3>
+        <h3>Total Before Tax : {totalBeforeTax.toFixed(2)}</h3>
+        <h3>Estimated Tax : {tax.toFixed(2)}</h3>
+        <h2>Order Total : {total.toFixed(2)}</h2>
       </div>
     </div>
   );

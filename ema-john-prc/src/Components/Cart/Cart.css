@@ -2,4 +2,11 @@
       text-align: center;
       color: goldenrod;
       font-weight: bold;
+      border-bottom: 2px solid goldenrod;
+      ;
+}
+
+.cart-details h2 {
+      color: goldenrod;
+      font-weight: bold;
 }
