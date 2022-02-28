@@ -1,4 +1,5 @@
 import React from "react";
+import Rating from "react-rating";
 import "./Product.css";
 
 const Product = (props) => {
@@ -14,6 +15,7 @@ const Product = (props) => {
         <h5>By: {seller}</h5>
         <h5>${price}</h5>
         <h5>only {stock} left in stock - order soon</h5>
+        <Rating initialRating={3} readonly />
         <button class="btn-regular">Add To Cart</button>
       </div>
     </div>
