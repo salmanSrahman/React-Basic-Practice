@@ -3,8 +3,8 @@ import Rating from "react-rating";
 import "./Product.css";
 
 const Product = (props) => {
-  console.log(props.product);
   const { img, name, price, seller, star, stock } = props.product;
+
   return (
     <div className="product-container">
       <div className="product img">
@@ -22,7 +22,14 @@ const Product = (props) => {
           emptySymbol="fa fa-star-o fa-2x"
           fullSymbol="fa fa-star fa-2x"
         />
-        <button class="btn-regular">Add To Cart</button>
+        <button
+          class="btn-regular"
+          onClick={() => {
+            props.handleShop(props.product);
+          }}
+        >
+          Add To Cart
+        </button>
       </div>
     </div>
   );

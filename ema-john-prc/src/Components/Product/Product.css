@@ -20,6 +20,7 @@
       font-weight: bold;
       border-radius: .3rem;
       display: block;
+      cursor: pointer;
 }
 
 .rating-style {
