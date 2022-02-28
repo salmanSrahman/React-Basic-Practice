@@ -4,7 +4,7 @@ import "./Product.css";
 
 const Product = (props) => {
   console.log(props.product);
-  const { img, name, price, seller, stock } = props.product;
+  const { img, name, price, seller, star, stock } = props.product;
   return (
     <div className="product-container">
       <div className="product img">
@@ -15,7 +15,13 @@ const Product = (props) => {
         <h5>By: {seller}</h5>
         <h5>${price}</h5>
         <h5>only {stock} left in stock - order soon</h5>
-        <Rating initialRating={3} readonly />
+        <Rating
+          className="rating-style"
+          initialRating={star}
+          readonly
+          emptySymbol="fa fa-star-o fa-2x"
+          fullSymbol="fa fa-star fa-2x"
+        />
         <button class="btn-regular">Add To Cart</button>
       </div>
     </div>
