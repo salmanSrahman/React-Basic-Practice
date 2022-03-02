@@ -42,11 +42,11 @@ const FormAuth = () => {
     });
   };
 
-//   const handleSignOut = () => {
-//     signOut(auth).then(() => {
-//        setUser({})
-//     });
-//   };
+  const handleSignOut = () => {
+    signOut(auth).then(() => {
+      setUser({});
+    });
+  };
 
   return (
     <div>
