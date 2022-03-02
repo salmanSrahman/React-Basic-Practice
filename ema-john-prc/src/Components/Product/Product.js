@@ -25,7 +25,7 @@ const Product = (props) => {
         <button
           class="btn-regular"
           onClick={() => {
-            props.handleShop(props.product);
+            props.handleAddToCart();
           }}
         >
           Add To Cart
