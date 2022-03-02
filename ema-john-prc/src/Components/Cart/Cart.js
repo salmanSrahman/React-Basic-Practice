@@ -2,9 +2,15 @@ import React from "react";
 import "./Cart.css";
 
 const Cart = ({ cart }) => {
+  console.log(cart);
   let subTotal = 0;
+  let pQuantity = 0;
   for (const product of cart) {
-    subTotal = subTotal + product.price;
+    if (!product.quantity) {
+      product.quantity = 1;
+    }
+    pQuantity = pQuantity + product.quantity;
+    subTotal = subTotal + product.price * product.quantity;
   }
 
   let shipping = subTotal > 50 ? 15 : 0;
@@ -16,7 +22,7 @@ const Cart = ({ cart }) => {
     <div className="cart">
       <div className="cart-title">
         <h1>Order Summary : </h1>
-        <h2>Items Ordered: {cart.length}</h2>
+        <h2>Items Ordered: {pQuantity}</h2>
       </div>
       <div className="cart-details">
         <h3>Items : {subTotal.toFixed(2)}</h3>
