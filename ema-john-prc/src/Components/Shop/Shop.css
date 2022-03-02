@@ -6,3 +6,21 @@
 .products-container {
       border-right: 2px solid gray;
 }
+
+.search-container {
+      display: flex;
+      justify-content: center;
+      background: #444;
+      padding: 10px 0;
+
+
+
+}
+
+.search-container input {
+      width: 600px;
+      padding: 7px;
+      font-weight: bold;
+      border-radius: 5px;
+
+}
