@@ -1,16 +1,35 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import Transport from "../Transport/Transport";
+import t1 from "../../images/Frame-1.png";
+import t2 from "../../images/Frame-2.png";
+import t3 from "../../images/Frame.png";
+import t4 from "../../images/Group.png";
+
+const transportInfo = [
+  {
+    id: 1,
+    carName: "Roley",
+    img: t1,
+  },
+  {
+    id: 2,
+    carName: "Alys",
+    img: t2,
+  },
+  {
+    id: 3,
+    carName: "Quint",
+    img: t3,
+  },
+  {
+    id: 4,
+    carName: "Adair",
+    img: t4,
+  },
+];
 
 const Home = () => {
-  const [transports, setTransports] = useState([]);
-
-  useEffect(() => {
-    fetch("./transport.JSON")
-      .then((res) => res.json())
-      .then((data) => setTransports(data));
-  });
-
   return (
     <div>
       <section className="nav-part">
@@ -39,7 +58,7 @@ const Home = () => {
       <section className="banner-part">
         <Container>
           <div className="row">
-            {transports.map((transport) => (
+            {transportInfo.map((transport) => (
               <Transport transport={transport}></Transport>
             ))}
           </div>
