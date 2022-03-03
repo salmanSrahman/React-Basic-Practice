@@ -1,5 +1,6 @@
 import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
+import "./Home.css";
 import Transport from "../Transport/Transport";
 import t1 from "../../images/Frame-1.png";
 import t2 from "../../images/Frame-2.png";
@@ -33,9 +34,11 @@ const Home = () => {
   return (
     <div>
       <section className="nav-part">
-        <Navbar bg="light" expand="lg">
+        <Navbar expand="lg">
           <Container>
-            <Navbar.Brand href="#">Navbar scroll</Navbar.Brand>
+            <Navbar.Brand href="#" className="fw-bold fs-2">
+              Urban Riders
+            </Navbar.Brand>
             <Navbar.Toggle aria-controls="navbarScroll" />
             <Navbar.Collapse id="navbarScroll">
               <Nav
@@ -43,11 +46,31 @@ const Home = () => {
                 style={{ maxHeight: "100px" }}
                 navbarScroll
               >
-                <Nav.Link href="#action1">Home</Nav.Link>
-                <Nav.Link href="#action2">Destination</Nav.Link>
-                <Nav.Link href="#action2">Blog</Nav.Link>
-                <Nav.Link href="#action2">Contact</Nav.Link>
-                <Nav.Link href="#action2" className="btn btn-warning fw-bold">
+                <Nav.Link
+                  href="#action1"
+                  className="font-style fw-bold text-black"
+                >
+                  Home
+                </Nav.Link>
+                <Nav.Link
+                  href="#action2"
+                  className="font-style fw-bold text-black"
+                >
+                  Destination
+                </Nav.Link>
+                <Nav.Link
+                  href="#action2"
+                  className="font-style fw-bold text-black"
+                >
+                  Blog
+                </Nav.Link>
+                <Nav.Link
+                  href="#action2"
+                  className="font-style fw-bold text-black"
+                >
+                  Contact
+                </Nav.Link>
+                <Nav.Link href="#action2" className="btn btn-warning fw-bold log-btn">
                   Login
                 </Nav.Link>
               </Nav>
@@ -56,13 +79,13 @@ const Home = () => {
         </Navbar>
       </section>
       <section className="banner-part">
-        <Container>
-          <div className="row">
+        <div className="container">
+          <div className="row g-3">
             {transportInfo.map((transport) => (
               <Transport transport={transport}></Transport>
             ))}
           </div>
-        </Container>
+        </div>
       </section>
     </div>
   );

@@ -1,0 +1,28 @@
+.nav-part {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      top: 10px;
+}
+
+.nav-part .font-style {
+      color: black;
+      margin: 0 10px;
+      font-size: 20px;
+      font-weight: bold;
+}
+
+.banner-part {
+      padding: 15rem 0;
+      background: url("../../images/Bg1.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 100%;
+      height: 100%;
+
+}
+
+.log-btn {
+      background: orange;
+}
