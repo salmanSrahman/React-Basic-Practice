@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
 import firebaseAuthentication from "../Firebase/Firebase.Init";
 
 firebaseAuthentication();
@@ -37,6 +41,22 @@ const LoginForm = () => {
       setError("Password Should Have At Least One UpperCase & LowerCase.");
       return;
     }
+
+    isLogin ? loginUser(email, password) : createNewUser(email, password);
+  };
+
+  const loginUser = (email, password) => {
+    signInWithEmailAndPassword(auth, email, password)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+      })
+      .catch((error) => {
+        setError(error.message);
+      });
+  };
+
+  const createNewUser = (email, password) => {
     createUserWithEmailAndPassword(auth, email, password)
       .then((result) => {
         setError("");
