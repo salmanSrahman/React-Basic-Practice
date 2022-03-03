@@ -6,10 +6,16 @@ import firebaseAuthentication from "../Firebase/Firebase.Init";
 firebaseAuthentication();
 
 const LoginForm = () => {
+  const [isLogin, setIsLogin] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const auth = getAuth();
+
+  const handleToggleLogin = (e) => {
+    e.preventDefault();
+    setIsLogin(e.target.checked);
+  };
 
   const handleEmail = (e) => {
     e.preventDefault();
@@ -31,15 +37,20 @@ const LoginForm = () => {
       setError("Password Should Have At Least One UpperCase & LowerCase.");
       return;
     }
-    createUserWithEmailAndPassword(auth, email, password).then((result) => {
-      setError("");
-      const user = result.user;
-      console.log(user);
-    });
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((result) => {
+        setError("");
+        const user = result.user;
+        console.log(user);
+      })
+      .catch((error) => {
+        setError(error.message);
+      });
   };
 
   return (
-    <div>
+    <div className="mt-5">
+      <h1>Please {isLogin ? "Login" : "Register"}</h1>
       <Form onSubmit={handleForm}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
@@ -64,10 +75,14 @@ const LoginForm = () => {
         </Form.Group>
         <Form.Text className="text-danger fw-bold">{error}</Form.Text>
         <Form.Group className="mb-3" controlId="formBasicCheckbox">
-          <Form.Check type="checkbox" label="Check me out" />
+          <Form.Check
+            type="checkbox"
+            label="Check me out"
+            onChange={handleToggleLogin}
+          />
         </Form.Group>
         <Button variant="primary" type="submit">
-          Submit
+          {isLogin ? "Login" : "Register"}
         </Button>
       </Form>
     </div>
