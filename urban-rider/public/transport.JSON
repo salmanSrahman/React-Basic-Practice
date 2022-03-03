@@ -1,0 +1,17 @@
+[{
+      "id": 1,
+      "carName": "Roley",
+      "img": "../src/images/Frame-1.png"
+}, {
+      "id": 2,
+      "carName": "Alys",
+      "img": "../src/images/Frame-2.png"
+}, {
+      "id": 3,
+      "carName": "Quint",
+      "img": "../src/images/Frame.png"
+}, {
+      "id": 4,
+      "carName": "Adair",
+      "img": "../src/images/Group.png"
+}]
