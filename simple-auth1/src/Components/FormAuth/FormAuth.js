@@ -6,7 +6,6 @@ import {
   GoogleAuthProvider,
   GithubAuthProvider,
   FacebookAuthProvider,
-  getRedirectResult,
   signOut,
 } from "firebase/auth";
 import firebaseAuthentication from "../Firebase/Firebase.Init";
@@ -46,7 +45,15 @@ const FormAuth = () => {
   };
 
   const handleFacebookSign = () => {
-    getRedirectResult()
+    signInWithPopup(auth, facebookProvider).then((result) => {
+      const { displayName, email, photoURL } = result.user;
+      const loggedUser = {
+        name: displayName,
+        email: email,
+        photo: photoURL,
+      };
+      setUser(loggedUser);
+    });
   };
 
   const handleSignOut = () => {
