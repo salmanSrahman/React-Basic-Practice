@@ -42,6 +42,10 @@ const FormAuth = () => {
     });
   };
 
+  const handleFacebookSign = () => {
+    console.log("Facebook");
+  };
+
   const handleSignOut = () => {
     signOut(auth).then(() => {
       setUser({});
@@ -55,9 +59,12 @@ const FormAuth = () => {
         <div>
           {" "}
           <Button onClick={handleGoogleSign}>Google Sign</Button>
-          <Button onClick={handleGithubSign} className="ms-2">
+          <Button onClick={handleGithubSign} className="ms-2 btn-warning">
             Github Sign
-          </Button>{" "}
+          </Button>
+          <Button onClick={handleFacebookSign} className="ms-2 btn-danger">
+            Facebook Sign
+          </Button>
         </div>
       ) : (
         <div>
