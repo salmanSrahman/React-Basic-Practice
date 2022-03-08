@@ -30,14 +30,14 @@ const useFirebase = () => {
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        setUser("");
+        setUser(user);
       }
     });
   }, []);
 
   const logOut = () => {
     signOut(auth).then(() => {
-      setUser("");
+      setUser({});
     });
   };
 
