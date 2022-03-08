@@ -10,12 +10,9 @@ const Header = () => {
       <Link to="/home">Home</Link>
       <Link to="/about">About</Link>
       <Link to="/register">Register</Link>
-
-      {user?.email ? (
-        <button onClick={logOut}>Logout</button>
-      ) : (
-        <Link to="/login">Login</Link>
-      )}
+      <Link to="/login">Login</Link>
+      <span>{user.displayName} </span>
+      {user.email && <button onClick={logOut}>Logout</button>}
     </div>
   );
 };
