@@ -1,10 +1,10 @@
 import React from "react";
 import { Container } from "react-bootstrap";
-import useFirebase from "../../Hooks/useFirebase";
+import useAuth from "../../Hooks/useAuth";
 import "./Home.css";
 
 const Home = () => {
-  const { user } = useFirebase();
+  const { user } = useAuth();
   return (
     <div>
       <Container>

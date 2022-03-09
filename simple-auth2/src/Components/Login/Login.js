@@ -1,10 +1,10 @@
 import React from "react";
 import { Button, Container } from "react-bootstrap";
-import useFirebase from "../../Hooks/useFirebase";
+import useAuth from "../../Hooks/useAuth";
 import "./Login.css";
 
 const Login = () => {
-  const { user, signInUsingGoogle } = useFirebase();
+  const { user, signInUsingGoogle } = useAuth();
   return (
     <div>
       <Container>
