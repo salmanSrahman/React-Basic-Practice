@@ -1,9 +1,12 @@
 import React from "react";
 import { Button, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import useFirebase from "../../Hooks/useFirebase";
 import "./Header.css";
 
 const Header = () => {
+  const { user } = useFirebase();
+
   return (
     <>
       <div className="header-part py-2 mb-5">
@@ -12,7 +15,8 @@ const Header = () => {
           <Link to="/about">About</Link>
           <Link to="/registration">Register</Link>
           <Link to="/login">Login</Link>
-          <Button variant="primary">Logout</Button>
+          <span className="fw-bold">{user?.displayName} </span>
+          {user?.email && <Button variant="primary">Logout</Button>}
         </Container>
       </div>
     </>
