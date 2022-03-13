@@ -8,3 +8,11 @@
 .product-details {
       padding: 0 15px;
 }
+
+.btn-regular {
+      background: goldenrod;
+      border: 0;
+      padding: 7px 15px;
+      border-radius: 3px;
+      cursor: pointer;
+}
