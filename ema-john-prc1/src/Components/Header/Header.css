@@ -1,0 +1,22 @@
+.header-part {
+      text-align: center;
+      background: #000;
+      padding: 10px;
+}
+
+.header-part a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 0 20px;
+}
+
+.header-img {
+      text-align: center;
+}
+
+.header-img img {
+      height: 70px;
+      margin: 0 auto;
+
+}
