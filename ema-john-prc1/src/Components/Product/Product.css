@@ -1,1 +1,10 @@
-.product-container{}
+.product-container {
+      display: flex;
+      border-right: 2px solid gray;
+      border-bottom: 2px solid gray;
+      padding: 10px
+}
+
+.product-details {
+      padding: 0 10px;
+}
