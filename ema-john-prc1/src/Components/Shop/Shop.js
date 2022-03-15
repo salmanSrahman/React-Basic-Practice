@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { addToDb } from "../../utilities/fakedb";
 import Cart from "../Cart/Cart";
 import Product from "../Product/Product";
 import "./Shop.css";
@@ -20,6 +21,7 @@ const Shop = () => {
   const handleAddToCart = (product) => {
     const newProduct = [...cart, product];
     setCart(newProduct);
+    addToDb(product.key);
   };
 
   const handleSearch = (e) => {
@@ -27,7 +29,6 @@ const Shop = () => {
     const searchText = products.filter((product) =>
       product.name.toLowerCase().includes(searchValue.toLowerCase())
     );
-    
     setDisplayProducts(searchText);
   };
 
