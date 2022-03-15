@@ -17,7 +17,6 @@ const Shop = () => {
         setDisplayProducts(data);
       });
   }, []);
-
   const handleAddToCart = (product) => {
     const newProduct = [...cart, product];
     setCart(newProduct);
