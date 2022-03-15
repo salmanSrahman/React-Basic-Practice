@@ -4,13 +4,18 @@ import Product from "../Product/Product";
 import "./Shop.css";
 
 const Shop = () => {
+  const [displayProducts, setDisplayProducts] = useState([]);
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState([]);
+
   useEffect(() => {
     fetch("./products.JSON")
       .then((res) => res.json())
-      .then((data) => setProducts(data));
-  });
+      .then((data) => {
+        setProducts(data);
+        setDisplayProducts(data);
+      });
+  }, []);
 
   const handleAddToCart = (product) => {
     const newProduct = [...cart, product];
@@ -18,7 +23,12 @@ const Shop = () => {
   };
 
   const handleSearch = (e) => {
-    console.log(e.target.value);
+    const searchValue = e.target.value;
+    const searchText = products.filter((product) =>
+      product.name.toLowerCase().includes(searchValue.toLowerCase())
+    );
+    
+    setDisplayProducts(searchText);
   };
 
   return (
@@ -28,7 +38,7 @@ const Shop = () => {
       </div>
       <div className="shop-container">
         <div className="products-container">
-          {products.map((product) => (
+          {displayProducts.map((product) => (
             <Product
               key={product.key}
               handleAddToCart={handleAddToCart}
