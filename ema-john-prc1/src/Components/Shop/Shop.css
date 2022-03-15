@@ -6,3 +6,15 @@
 .products-container {
       border-bottom: 2px solid gray;
 }
+
+.search-container {
+      text-align: center;
+      background: rgba(0, 0, 0, 0.8);
+      padding: 10px 0;
+}
+
+.search-container input {
+      width: 650px;
+      padding: 5px;
+      border-radius: 5px;
+}

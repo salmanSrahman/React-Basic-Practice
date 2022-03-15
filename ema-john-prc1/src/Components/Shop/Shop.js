@@ -17,21 +17,30 @@ const Shop = () => {
     setCart(newProduct);
   };
 
+  const handleSearch = (e) => {
+    console.log(e.target.value);
+  };
+
   return (
-    <div className="shop-container">
-      <div className="products-container">
-        {products.map((product) => (
-          <Product
-            key={product.key}
-            handleAddToCart={handleAddToCart}
-            product={product}
-          ></Product>
-        ))}
+    <>
+      <div className="search-container">
+        <input type="text" onChange={handleSearch} />
       </div>
-      <div className="cart-container">
-        <Cart cart={cart}></Cart>
+      <div className="shop-container">
+        <div className="products-container">
+          {products.map((product) => (
+            <Product
+              key={product.key}
+              handleAddToCart={handleAddToCart}
+              product={product}
+            ></Product>
+          ))}
+        </div>
+        <div className="cart-container">
+          <Cart cart={cart}></Cart>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
