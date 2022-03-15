@@ -3,8 +3,13 @@ import "./Cart.css";
 
 const Cart = ({ cart }) => {
   let productPrice = 0;
+  let productQuantity = 0;
   for (const product of cart) {
-    productPrice = productPrice + product.price;
+    if (!product.quantity) {
+      product.quantity = 1;
+    }
+    productQuantity = productQuantity + product.quantity;
+    productPrice = productPrice + product.price * product.quantity;
   }
 
   const Shipping = productPrice > 50 ? 15 : 0;
@@ -16,7 +21,7 @@ const Cart = ({ cart }) => {
     <div>
       <div style={{ textAlign: "center", borderBottom: "1px solid gray" }}>
         <h2>Order Summary : </h2>
-        <h4>Items ordered : {cart.length}</h4>
+        <h4>Items ordered : {productQuantity}</h4>
       </div>
       <div style={{ padding: "10px" }}>
         <h4>Item Price: {productPrice.toFixed(2)}</h4>

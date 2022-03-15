@@ -24,7 +24,11 @@ const Shop = () => {
       const storedCart = [];
       for (const key in savedCart) {
         const addedProduct = products.find((product) => product.key === key);
-        storedCart.push(addedProduct);
+        if (addedProduct) {
+          const quantity = savedCart[key];
+          addedProduct.quantity = quantity;
+          storedCart.push(addedProduct);
+        }
       }
       setCart(storedCart);
     }
