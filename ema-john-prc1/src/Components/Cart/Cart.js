@@ -1,7 +1,7 @@
 import React from "react";
 import "./Cart.css";
 
-const Cart = ({ cart }) => {
+const Cart = ({ cart, children }) => {
   let productPrice = 0;
   let productQuantity = 0;
   for (const product of cart) {
@@ -31,6 +31,7 @@ const Cart = ({ cart }) => {
         <h2 style={{ color: "red", fontWeight: "bold" }}>
           Order Total : {total.toFixed(2)}
         </h2>
+        {children}
       </div>
     </div>
   );

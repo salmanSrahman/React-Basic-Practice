@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { addToDb, getStoredCart } from "../../utilities/fakedb";
 import Cart from "../Cart/Cart";
 import Product from "../Product/Product";
@@ -8,6 +9,7 @@ const Shop = () => {
   const [displayProducts, setDisplayProducts] = useState([]);
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch("./products.JSON")
@@ -64,7 +66,16 @@ const Shop = () => {
           ))}
         </div>
         <div className="cart-container">
-          <Cart cart={cart}></Cart>
+          <Cart cart={cart}>
+            <Link
+              to="/"
+              className="btn-regular"
+              style={{ textDecoration: "none", color: "black" }}
+              onClick={navigate("./orderReview")}
+            >
+              Review Your Order
+            </Link>
+          </Cart>
         </div>
       </div>
     </>
