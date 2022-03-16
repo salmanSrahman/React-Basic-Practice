@@ -1,12 +1,14 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import useCart from "../../useHooks/useCart";
 import useProduct from "../../useHooks/useProduct";
-import { deleteFromDb } from "../../utilities/fakedb";
+import { clearTheCart, deleteFromDb } from "../../utilities/fakedb";
 import Cart from "../Cart/Cart";
 import ReviewItem from "../ReviewItem/ReviewItem";
 import "./OrderReview.css";
 
 const OrderReview = () => {
+  const navigate = useNavigate();
   const [products] = useProduct();
   const [cart, setCart] = useCart(products);
 
@@ -14,6 +16,12 @@ const OrderReview = () => {
     const newCart = cart.filter((product) => product.key !== key);
     setCart(newCart);
     deleteFromDb(key);
+  };
+
+  const handlePlaceOrder = () => {
+    navigate("/delivarymessage");
+    setCart([]);
+    clearTheCart();
   };
 
   return (
@@ -29,7 +37,11 @@ const OrderReview = () => {
           ))}
         </div>
         <div className="cart-container">
-          <Cart cart={cart}></Cart>
+          <Cart cart={cart}>
+            <button className="btn-regular" onClick={handlePlaceOrder}>
+              Place Order
+            </button>
+          </Cart>
         </div>
       </div>
     </div>

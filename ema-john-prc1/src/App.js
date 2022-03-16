@@ -5,6 +5,7 @@ import Shop from "./Components/Shop/Shop";
 import OrderReview from "./Components/OrderReview/OrderReview";
 import Inventory from "./Components/Inventory/Inventory";
 import Cart from "./Components/Cart/Cart";
+import DelivaryMessage from "./Components/DelivaryMessage/DelivaryMessage";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="orderreview" element={<OrderReview />}></Route>
           <Route path="inventory" element={<Inventory />}></Route>
           <Route path="cart" element={<Cart />}></Route>
+          <Route path="delivarymessage" element={<DelivaryMessage/>}></Route>
         </Routes>
       </BrowserRouter>
     </div>
