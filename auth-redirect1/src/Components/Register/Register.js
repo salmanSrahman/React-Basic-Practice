@@ -10,10 +10,10 @@ const Register = () => {
         <input type="email" />
         <br />
         <input type="password" />
-         <br />
+        <br />
         <input type="submit" value="submit" />
       </form>
-      <Link to="/login">Already Registerd?</Link>
+      <Link to="/login">Already Registered?</Link>
     </div>
   );
 };
