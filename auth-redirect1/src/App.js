@@ -1,16 +1,16 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 import Home from "./Components/Home/Home";
 import Header from "./Components/Header/Header";
 import Register from "./Components/Register/Register";
 import Login from "./Components/Login/Login";
-import { Container } from "react-bootstrap";
+import AuthProvider from "./Context/AuthProvider";
 
 function App() {
   return (
     <div>
-      <Container>
+      <AuthProvider>
         <BrowserRouter>
           <Header />
           <Routes>
@@ -20,7 +20,7 @@ function App() {
             <Route path="/login" element={<Login />}></Route>
           </Routes>
         </BrowserRouter>
-      </Container>
+      </AuthProvider>
     </div>
   );
 }
