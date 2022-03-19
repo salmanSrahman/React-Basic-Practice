@@ -9,6 +9,7 @@ import AuthProvider from "./Context/AuthProvider";
 import { Container } from "react-bootstrap";
 import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
 import Shipping from "./Components/Shipping/Shipping";
+import NotFound from "./Components/NotFound/NotFound";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
                 }
               ></Route>
               <Route path="/register" element={<Register />}></Route>
+              <Route path="/notfound" element={<NotFound />}></Route>
               <Route path="/login" element={<Login />}></Route>
             </Routes>
           </BrowserRouter>
