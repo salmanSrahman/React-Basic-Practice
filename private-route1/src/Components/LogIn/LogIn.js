@@ -1,11 +1,11 @@
 import React from "react";
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import useFirebase from "../../Hooks/useFirebase";
+import useAuth from "../../Hooks/useAuth";
 import "./LogIn.css";
 
 const LogIn = () => {
-  const { user, signInUsingGoogle } = useFirebase();
+  const { user, signInUsingGoogle } = useAuth();
   return (
     <div className="text-center">
       {user?.email ? (

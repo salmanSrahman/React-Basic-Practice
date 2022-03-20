@@ -1,10 +1,10 @@
 import React from "react";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
-import useFirebase from "../../Hooks/useFirebase";
+import useAuth from "../../Hooks/useAuth";
 import "./Register.css";
 
 const Register = () => {
-  const { user } = useFirebase();
+  const { user } = useAuth();
 
   return (
     <div>

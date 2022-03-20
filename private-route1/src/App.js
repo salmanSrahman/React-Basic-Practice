@@ -7,21 +7,24 @@ import LogIn from "./Components/LogIn/LogIn";
 import Shipping from "./Components/Shipping/Shipping";
 import Header from "./Components/Header/Header";
 import { Container } from "react-bootstrap";
+import AuthProvider from "./Components/Context/AuthProvider";
 
 function App() {
   return (
     <div>
       <Container>
-        <Router>
-          <Header />
-          <Routes>
-            <Route path="/" element={<Home />}></Route>
-            <Route path="home" element={<Home />}></Route>
-            <Route path="shipping" element={<Shipping />}></Route>
-            <Route path="register" element={<Register />}></Route>
-            <Route path="login" element={<LogIn />}></Route>
-          </Routes>
-        </Router>
+        <AuthProvider>
+          <Router>
+            <Header />
+            <Routes>
+              <Route path="/" element={<Home />}></Route>
+              <Route path="home" element={<Home />}></Route>
+              <Route path="shipping" element={<Shipping />}></Route>
+              <Route path="register" element={<Register />}></Route>
+              <Route path="login" element={<LogIn />}></Route>
+            </Routes>
+          </Router>
+        </AuthProvider>
       </Container>
     </div>
   );
