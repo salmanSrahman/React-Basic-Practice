@@ -5,17 +5,19 @@ import Home from "./Components/Home/Home";
 import Register from "./Components/Register/Register";
 import LogIn from "./Components/LogIn/LogIn";
 import Shipping from "./Components/Shipping/Shipping";
+import Header from "./Components/Header/Header";
 
 function App() {
   return (
     <div>
       <Router>
+        <Header />
         <Routes>
-          <Route to="/" element={<Home />}></Route>
-          <Route to="home" element={<Home />}></Route>
-          <Route to="shipping" element={<Shipping />}></Route>
-          <Route to="register" element={<Register />}></Route>
-          <Route to="login" element={<LogIn />}></Route>
+          <Route path="/" element={<Home />}></Route>
+          <Route path="home" element={<Home />}></Route>
+          <Route path="shipping" element={<Shipping />}></Route>
+          <Route path="register" element={<Register />}></Route>
+          <Route path="login" element={<LogIn />}></Route>
         </Routes>
       </Router>
     </div>
