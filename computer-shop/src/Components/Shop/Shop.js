@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
+import Product from "../Product/Product";
 import "./Shop.css";
 
 const Shop = () => {
@@ -15,9 +16,13 @@ const Shop = () => {
     <div>
       <Container>
         <Row>
-          <Col xl={9}>{
-              products.map(product => )
-          }</Col>
+          <Col xl={9}>
+            <Row xl={3}>
+              {products.map((product) => (
+                <Product key={product.key} product={product}></Product>
+              ))}
+            </Row>
+          </Col>
           <Col xl={3}>
             <h1>Cart</h1>
           </Col>
