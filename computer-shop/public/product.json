@@ -1,0 +1,114 @@
+[{
+            "key": "B06Y4GZS9C",
+            "name": "Acer Predator Helios",
+            "stock": 22,
+            "star": 3,
+            "starCount": 257,
+            "img": "https://cdn.mos.cms.futurecdn.net/38JaYpKskA3UcEjiXX5QGJ-970-80.jpg.webp",
+            "price": 1
+
+      },
+      {
+            "key": "B06XJJG4PD",
+            "name": "ASUS P-Series P2540UA",
+            "stock": 35,
+            "star": 3,
+            "starCount": 599,
+            "img": "https://cdn.mos.cms.futurecdn.net/PrmAmoof7cFMnHNCXsbTQB-970-80.jpg.webp",
+            "price": 499
+      },
+      {
+            "key": "B01NBE6Y5D",
+            "name": "HP 15.6",
+            "stock": 74,
+            "star": 3,
+            "starCount": 4293,
+            "img": "https://cdn.mos.cms.futurecdn.net/nVkBk7kaJAZ6JpTgKrnqCJ-970-80.jpg.webp",
+            "price": 247.98
+      },
+      {
+            "key": "B01J42JPJG",
+            "name": "Acer Chromebook11",
+            "stock": 19,
+            "star": 4,
+            "starCount": 4646,
+            "img": "https://cdn.mos.cms.futurecdn.net/yLGbDuq6SviKTgsAgNGSMJ-970-80.jpg.webp",
+            "price": 279.99
+
+      },
+      {
+            "key": "B01F4ZG68A",
+            "name": "HP 14-E2-7110",
+            "stock": 33,
+            "star": 3,
+            "starCount": 2066,
+            "img": "https://cdn.mos.cms.futurecdn.net/iGygWSERcp7dL46jBZSHqi-970-80.jpg.webp",
+            "price": 212.33
+      },
+      {
+            "key": "B01D27ERMO",
+            "name": "Apple Inspiron Flagship",
+            "stock": 14,
+            "star": 3,
+            "starCount": 3141,
+            "img": "https://cdn.mos.cms.futurecdn.net/nNWmtG7onQ7BZsMyNhV3Mn-970-80.jpg.webp",
+            "price": 498.94
+      },
+      {
+            "key": "B06X6J2RLY",
+            "name": "HP 15.6-Inch HD",
+            "stock": 85,
+            "star": 4,
+            "starCount": 149,
+            "img": "https://cdn.mos.cms.futurecdn.net/dHZW5YFUfbY6Y6GsNNCon-970-80.jpg.webp",
+            "price": 287.94
+
+      },
+      {
+            "key": "B01N5G5PG2",
+            "name": "ASUS Chromebook",
+            "stock": 52,
+            "star": 4,
+            "starCount": 1146,
+            "img": "https://cdn.mos.cms.futurecdn.net/6VtzMteKMup53Z8REvaVFU-970-80.jpg.webp",
+            "price": 499
+      },
+      {
+            "key": "B01LZ6XKS6",
+
+            "name": "Samsung Chromebook Plus",
+            "stock": 96,
+            "star": 4,
+            "starCount": 3742,
+            "img": "https://cdn.mos.cms.futurecdn.net/mJgiToiybYhXXt5T6DXyBU-970-80.jpg.webp",
+            "price": 408.45
+      },
+      {
+            "key": "B06XFGF7SN",
+            "name": "Dell Inspiron 15.6",
+            "stock": 57,
+            "star": 3,
+            "starCount": 3972,
+            "img": "https://cdn.mos.cms.futurecdn.net/J7i2ggjqL6oyKw82owevS-970-80.jpg.webp",
+            "price": 899.99
+      },
+      {
+            "key": "B01LT692RK",
+            "name": "ASUS E200HA",
+            "stock": 41,
+            "star": 3,
+            "starCount": 4074,
+            "img": "https://cdn.mos.cms.futurecdn.net/zACxYU3xuD5pRnJjUKDNGF-970-80.jpg.webp",
+            "price": 199
+
+      },
+      {
+            "key": "B071LB1GG4",
+            "name": "Samsung XE510C24-Pro",
+            "stock": 91,
+            "star": 4,
+            "starCount": 1157,
+            "img": "https://cdn.mos.cms.futurecdn.net/oHJjXXCENkxLRo8wc2yR5-970-80.jpg.webp",
+            "price": 549.99
+      }
+]
