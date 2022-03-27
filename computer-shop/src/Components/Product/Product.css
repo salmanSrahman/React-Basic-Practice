@@ -1,3 +1,50 @@
+.product-details {
+      padding: 5px
+}
+
+.details {
+      padding: 10px;
+}
+
+.product-details img {
+      height: 170px
+}
+
 .rating-style {
       font-size: .5rem;
+      color: orangered;
+}
+
+.btn-regular {
+      background: orangered;
+      border-color: orangered;
+}
+
+.btn-regular:hover {
+      border-color: orangered;
+      background: orangered;
+}
+
+.btn-regular .btn-primary {
+      color: #fff;
+      border-color: orangered;
+      background: orangered;
+
+}
+
+.btn-primary:active {
+      background-color: orangered;
+      border-color: orangered;
+}
+
+.btn-primary:focus {
+      color: #fff;
+      background-color: orangered;
+      border-color: orangered;
+      box-shadow: none;
+
+}
+
+.btn-primary.active:focus {
+      box-shadow: none !important;
 }

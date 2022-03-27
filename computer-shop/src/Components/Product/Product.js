@@ -1,32 +1,41 @@
 import React from "react";
-import { Button, Col } from "react-bootstrap";
+import { Button, Card, Col } from "react-bootstrap";
 import Rating from "react-rating";
 import "./Product.css";
+import { RiShoppingBag3Fill } from "react-icons/ri";
 
 const Product = ({ product }) => {
   console.log(product);
-  const { img, key, name, price, star, starCount, stock } = product;
+  const { img, name, price, star, starCount, stock } = product;
   return (
     <div>
       <Col>
-        <div className="product-details">
-          <img src={img} alt="" className="img-fluid" />
-          <h4>{name}</h4>
-          <h5>Price: ${price}</h5>
-          <div>
-            <Rating
-              className="rating-style"
-              initialRating={star}
-              emptySymbol="fa fa-star-o fa-2x"
-              fullSymbol="fa fa-star fa-2x"
-              readonly
-            />
+        <Card>
+          <div className="product-details">
+            <img src={img} alt="" className="img-fluid" />
+            <div className="details">
+              <h5>{name}</h5>
+              <h5>Price: ${price}</h5>
+              <div>
+                <Rating
+                  className="rating-style"
+                  initialRating={star}
+                  emptySymbol="fa fa-star-o fa-2x"
+                  fullSymbol="fa fa-star fa-2x"
+                  readonly
+                />
+                <span className="text-secondary">({starCount} review)</span>
+              </div>
+              <h6 className="my-2">
+                Only {stock} left in stock -{" "}
+                <span className="text-danger">order soon</span>
+              </h6>
+              <Button className="btn-regular">
+                Add To Cart <RiShoppingBag3Fill className="mb-1" />{" "}
+              </Button>
+            </div>
           </div>
-          <h5>
-            Only {stock} left in stock - <span>order soon</span>
-          </h5>
-          <Button>Add To Cart</Button>
-        </div>
+        </Card>
       </Col>
     </div>
   );
