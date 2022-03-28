@@ -4,9 +4,9 @@ import Rating from "react-rating";
 import "./Product.css";
 import { RiShoppingBag3Fill } from "react-icons/ri";
 
-const Product = ({ product }) => {
-  console.log(product);
+const Product = ({ product, handleAddToCart }) => {
   const { img, name, price, star, starCount, stock } = product;
+
   return (
     <div>
       <Col>
@@ -30,7 +30,10 @@ const Product = ({ product }) => {
                 Only {stock} left in stock -{" "}
                 <span className="text-danger">order soon</span>
               </h6>
-              <Button className="btn-regular">
+              <Button
+                className="btn-regular"
+                onClick={() => handleAddToCart(product)}
+              >
                 Add To Cart <RiShoppingBag3Fill className="mb-1" />{" "}
               </Button>
             </div>

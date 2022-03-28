@@ -1,16 +1,23 @@
 import React, { useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
+import Cart from "../Cart/Cart";
 import Product from "../Product/Product";
 import "./Shop.css";
 
 const Shop = () => {
   const [products, setProducts] = useState([]);
+  const [cart, setCart] = useState([]);
 
   useEffect(() => {
     fetch("./products.json")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
+
+  const handleAddToCart = (product) => {
+    const newCart = [...cart, product];
+    setCart(newCart);
+  };
 
   return (
     <div>
@@ -19,12 +26,16 @@ const Shop = () => {
           <Col xl={9}>
             <Row xl={3} className="g-3">
               {products.map((product) => (
-                <Product key={product.key} product={product}></Product>
+                <Product
+                  key={product.key}
+                  product={product}
+                  handleAddToCart={handleAddToCart}
+                ></Product>
               ))}
             </Row>
           </Col>
           <Col xl={3}>
-            <h1>Cart</h1>
+            <Cart cart={cart}></Cart>
           </Col>
         </Row>
       </Container>
