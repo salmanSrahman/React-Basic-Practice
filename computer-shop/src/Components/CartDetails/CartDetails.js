@@ -6,7 +6,7 @@ const CartDetails = ({ product }) => {
   const { img, name, price } = product;
   return (
     <div>
-      <div className="d-flex justify-content-between">
+      <div className="d-flex justify-content-between align-items-center cart-details">
         <div>
           <img src={img} alt="" className="img-fluid" />
         </div>
@@ -15,7 +15,7 @@ const CartDetails = ({ product }) => {
           <h6>${price}</h6>
         </div>
         <div>
-          <AiTwotoneDelete />
+          <AiTwotoneDelete className="details-icon text-danger" />
         </div>
       </div>
     </div>
