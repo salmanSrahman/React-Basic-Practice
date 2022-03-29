@@ -10,6 +10,7 @@ const Shop = () => {
   const [cart, setCart] = useState([]);
   const [items, setItems] = useState([]);
 
+  const notify2 = () => toast("You Already Added This Product.");
   const notify3 = () => toast("You Didn't Add Any Product.");
 
   useEffect(() => {
@@ -19,8 +20,13 @@ const Shop = () => {
   }, []);
 
   const handleAddToCart = (product) => {
-    const newCart = [...cart, product];
-    setCart(newCart);
+    const exist = cart.find((pd) => pd.key === product.key);
+    if (!exist) {
+      const newCart = [...cart, product];
+      setCart(newCart);
+    } else {
+      notify2();
+    }
   };
 
   const handleSelect = () => {
