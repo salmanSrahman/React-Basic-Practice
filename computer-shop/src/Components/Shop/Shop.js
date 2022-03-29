@@ -3,10 +3,14 @@ import { Col, Container, Row } from "react-bootstrap";
 import Cart from "../Cart/Cart";
 import Product from "../Product/Product";
 import "./Shop.css";
+import toast, { Toaster } from "react-hot-toast";
 
 const Shop = () => {
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState([]);
+  const [items, setItems] = useState([]);
+
+  const notify3 = () => toast("You Didn't Add Any Product.");
 
   useEffect(() => {
     fetch("./products.json")
@@ -17,6 +21,17 @@ const Shop = () => {
   const handleAddToCart = (product) => {
     const newCart = [...cart, product];
     setCart(newCart);
+  };
+
+  const handleSelect = () => {
+    let selectItem = [];
+    const items = cart;
+    var item = [Math.floor(Math.random() * items.length)];
+    if ((selectItem = cart[item])) {
+      setItems(selectItem);
+    } else {
+      notify3();
+    }
   };
 
   const handleRemove = () => {
@@ -36,10 +51,16 @@ const Shop = () => {
                   handleAddToCart={handleAddToCart}
                 ></Product>
               ))}
+              <Toaster />
             </Row>
           </Col>
           <Col xl={3}>
-            <Cart cart={cart} handleRemove={handleRemove}></Cart>
+            <Cart
+              cart={cart}
+              handleRemove={handleRemove}
+              handleSelect={handleSelect}
+              items={items}
+            ></Cart>
           </Col>
         </Row>
       </Container>
