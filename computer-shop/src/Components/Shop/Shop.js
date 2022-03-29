@@ -10,6 +10,7 @@ const Shop = () => {
   const [cart, setCart] = useState([]);
   const [items, setItems] = useState([]);
 
+  const notify1 = () => toast("Can't Add More Than 4 products");
   const notify2 = () => toast("You Already Added This Product.");
   const notify3 = () => toast("You Didn't Add Any Product.");
 
@@ -20,12 +21,16 @@ const Shop = () => {
   }, []);
 
   const handleAddToCart = (product) => {
-    const exist = cart.find((pd) => pd.key === product.key);
-    if (!exist) {
-      const newCart = [...cart, product];
-      setCart(newCart);
+    if (!(cart.length >= 4)) {
+      const exist = cart.find((pd) => pd.key === product.key);
+      if (!exist) {
+        const newCart = [...cart, product];
+        setCart(newCart);
+      } else {
+        notify2();
+      }
     } else {
-      notify2();
+      notify1();
     }
   };
 
@@ -42,6 +47,7 @@ const Shop = () => {
 
   const handleRemove = () => {
     setCart([]);
+    setItems([]);
   };
 
   return (
