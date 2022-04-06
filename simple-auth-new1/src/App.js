@@ -1,6 +1,11 @@
 import "./App.css";
 import app from "./firebase.config";
-import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import {
+  getAuth,
+  signInWithPopup,
+  GoogleAuthProvider,
+  signOut,
+} from "firebase/auth";
 import { useState } from "react";
 
 function App() {
@@ -15,11 +20,22 @@ function App() {
     });
   };
 
+  const googleSignOut = () => {
+    signOut(auth).then(() => {
+      setUser({});
+    });
+  };
+
   return (
     <div className="App">
       <h1>Authentication</h1>
+
       {user.displayName}
-      <button onClick={googleSignIn}>Google Sign In</button>
+      {!user.email ? (
+        <button onClick={googleSignIn}>Google Sign In</button>
+      ) : (
+        <button onClick={googleSignOut}>Sign Out</button>
+      )}
     </div>
   );
 }
