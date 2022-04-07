@@ -32,7 +32,10 @@ function App() {
 
       {user.displayName}
       {!user.email ? (
-        <button onClick={googleSignIn}>Google Sign In</button>
+        <div>
+          <button onClick={googleSignIn}>Google Sign In</button>
+          <button onClick={githubSignIn}>Github Sign In</button>
+        </div>
       ) : (
         <button onClick={googleSignOut}>Sign Out</button>
       )}
