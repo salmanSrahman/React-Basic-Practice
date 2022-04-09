@@ -6,11 +6,34 @@ import app from "./firebase.Config";
 const auth = getAuth(app);
 
 function App() {
+  const [validated, setValidated] = useState(false);
+  const [error, setError] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleForm = (event) => {
     event.preventDefault();
+    const form = event.currentTarget;
+    if (form.checkValidity() === false) {
+      event.stopPropagation();
+      return;
+    }
+    if (!/(?=.*?[A-Z])/.test(password)) {
+      setError("Password must have at least 1 uppercase");
+      return;
+    }
+    if (!/(?=.*?[a-z])/.test(password)) {
+      setError("Password must have at least 1 lowercase");
+      return;
+    }
+    if (!/(?=.*?[0-9])/.test(password)) {
+      setError("Password must have at least 1 digit");
+      return;
+    }
+
+    setValidated(true);
+    setError("");
+
     createUserWithEmailAndPassword(auth, email, password)
       .then((result) => {
         const user = result.user;
@@ -32,7 +55,7 @@ function App() {
     <div>
       <Container>
         <div className="w-50 mx-auto">
-          <Form onSubmit={handleForm}>
+          <Form noValidate validated={validated} onSubmit={handleForm}>
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Email address</Form.Label>
               <Form.Control
@@ -40,6 +63,9 @@ function App() {
                 placeholder="Enter email"
                 onBlur={handleEmail}
               />
+              <Form.Control.Feedback type="invalid">
+                Please provide a valid email.
+              </Form.Control.Feedback>
               <Form.Text className="text-muted">
                 We'll never share your email with anyone else.
               </Form.Text>
@@ -52,7 +78,11 @@ function App() {
                 placeholder="Password"
                 onBlur={handlePassword}
               />
+              <Form.Control.Feedback type="invalid">
+                Please provide a valid password.
+              </Form.Control.Feedback>
             </Form.Group>
+            <p className="text-danger">{error}</p>
             <Form.Group className="mb-3" controlId="formBasicCheckbox">
               <Form.Check type="checkbox" label="Check me out" />
             </Form.Group>
