@@ -18,6 +18,7 @@ function App() {
       event.stopPropagation();
       return;
     }
+
     if (!/(?=.*?[A-Z])/.test(password)) {
       setError("Password must have at least 1 uppercase");
       return;
@@ -40,7 +41,7 @@ function App() {
         console.log(user);
       })
       .catch((error) => {
-        console.error(error.message);
+        setError(error.message);
       });
   };
 
