@@ -7,6 +7,7 @@ import {
   signInWithEmailAndPassword,
   sendEmailVerification,
   sendPasswordResetEmail,
+  updateProfile,
 } from "firebase/auth";
 import app from "./firebase.Config";
 const auth = getAuth(app);
@@ -15,6 +16,7 @@ function App() {
   const [validated, setValidated] = useState(false);
   const [registered, setRegistered] = useState(false);
   const [error, setError] = useState("");
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -53,6 +55,7 @@ function App() {
         .then((result) => {
           const user = result.user;
           verifiedEmail();
+          updateUser();
           console.log(user);
         })
         .catch((error) => {
@@ -70,6 +73,14 @@ function App() {
   const handleRegistration = (event) => {
     setRegistered(event.target.checked);
   };
+  const updateUser = () => {
+    updateProfile(auth.currentUser, {
+      displayName: name,
+    }).then(() => {});
+  };
+  const handleName = (event) => {
+    setName(event.target.value);
+  };
 
   const handleEmail = (event) => {
     setEmail(event.target.value);
@@ -86,6 +97,15 @@ function App() {
             Please {registered ? "Login" : "Register"}
           </h2>
           <Form noValidate validated={validated} onSubmit={handleForm}>
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Label>Email address</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Enter name"
+                onBlur={handleName}
+                required
+              />
+            </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Email address</Form.Label>
               <Form.Control
