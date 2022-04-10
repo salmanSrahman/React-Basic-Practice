@@ -96,16 +96,19 @@ function App() {
           <h2 className="text-danger">
             Please {registered ? "Login" : "Register"}
           </h2>
+
           <Form noValidate validated={validated} onSubmit={handleForm}>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>Email address</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Enter name"
-                onBlur={handleName}
-                required
-              />
-            </Form.Group>
+            {!registered && (
+              <Form.Group className="mb-3" controlId="formBasicName">
+                <Form.Label>Email address</Form.Label>
+                <Form.Control
+                  type="text"
+                  placeholder="Enter name"
+                  onBlur={handleName}
+                  required
+                />
+              </Form.Group>
+            )}
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Email address</Form.Label>
               <Form.Control
