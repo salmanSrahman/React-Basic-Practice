@@ -6,7 +6,7 @@ import useFirebase from "../../Hooks/useFirebase";
 import "./Header.css";
 
 const Header = () => {
-  const { user } = useFirebase();
+  const { user, LogOut } = useFirebase();
   return (
     <div>
       <Navbar bg="light" expand="lg">
@@ -35,8 +35,8 @@ const Header = () => {
                 {user.displayName && user.displayName}{" "}
               </span>
 
-              {user ? (
-                <Button>Sign Out</Button>
+              {user.displayName ? (
+                <Button onClick={LogOut}>Sign Out</Button>
               ) : (
                 <NavLink to="/login" className="nav-menu">
                   Login
