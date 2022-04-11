@@ -35,7 +35,7 @@ const Header = () => {
                 {user.displayName && user.displayName}{" "}
               </span>
 
-              {user.uid ? (
+              {user?.uid ? (
                 <Button onClick={LogOut}>Sign Out</Button>
               ) : (
                 <NavLink to="/login" className="nav-menu">

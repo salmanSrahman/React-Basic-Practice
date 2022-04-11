@@ -10,7 +10,7 @@ const Home = () => {
   return (
     <div className="text-center">
       <h1>Here is home.</h1>
-      <p>{user.uid ? user.displayName : "Nobody"}</p>
+      <p>{user?.uid ? user.displayName : "Nobody"}</p>
     </div>
   );
 };
