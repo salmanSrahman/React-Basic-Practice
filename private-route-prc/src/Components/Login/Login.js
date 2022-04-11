@@ -1,14 +1,23 @@
+import { getAuth } from "firebase/auth";
 import React from "react";
 import { Button, Container } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
-import useFirebase from "../../Hooks/useFirebase";
+import { useSignInWithGoogle } from "react-firebase-hooks/auth";
+import app from "../../Firebase.config";
+
+const auth = getAuth(app);
 
 const Login = () => {
-  const { googleSignIn } = useFirebase();
+  const [signInWithGoogle] = useSignInWithGoogle(auth);
   return (
     <div>
       <Container>
-        <Button onClick={googleSignIn} className="mx-auto">
+        <Button
+          onClick={() => {
+            signInWithGoogle();
+          }}
+          className="mx-auto"
+        >
           Google SignIn
         </Button>
         <div className="w-50 mx-auto">
