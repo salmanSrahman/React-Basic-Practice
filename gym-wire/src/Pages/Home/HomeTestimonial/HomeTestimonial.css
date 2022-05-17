@@ -1,0 +1,26 @@
+.testimonial-card {
+      background: #000;
+      height: 300px;
+      padding: 50px;
+      border-radius: 0px;
+      background-color: #000000;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+}
+
+.testimonial-card p {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 28px;
+      margin: 0 auto 10px;
+      color: #fff;
+}
+
+.testimonial-card h5 {
+      color: rgb(194, 164, 59);
+      transition: all linear 0.3s;
+}
+
+.testimonial-card:hover h5 {
+      transform: translateX(7px);
+}

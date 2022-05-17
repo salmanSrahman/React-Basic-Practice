@@ -1,0 +1,46 @@
+.title {
+      position: relative;
+      text-transform: uppercase;
+}
+
+.title::after {
+      position: absolute;
+      content: " ";
+      left: 0;
+      bottom: -3px;
+      width: 70px;
+      height: 4px;
+      border-radius: 5px;
+      background: goldenrod;
+
+}
+
+.title::before {
+      position: absolute;
+      content: " ";
+      left: 73px;
+      bottom: -3px;
+      width: 12px;
+      height: 4px;
+      border-radius: 5px;
+      background: goldenrod;
+}
+
+.custom-btn {
+      background-color: #000000;
+      color: #ffffff;
+      border: 2px solid #000000;
+      height: auto;
+      padding: 14px 30px;
+      font-weight: 500;
+      line-height: 1;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      border-radius: 30px;
+      transition: all linear 0.3s
+}
+
+.custom-btn:hover {
+      background: transparent;
+      color: black
+}

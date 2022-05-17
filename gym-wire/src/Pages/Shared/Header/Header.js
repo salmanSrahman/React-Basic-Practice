@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, Container, Nav, Navbar } from "react-bootstrap";
 import "./Header.css";
-import logo from "../../../images/logo.png";
+import logo from "../../../images/logo.webp";
 import { Link } from "react-router-dom";
 import CustomLink from "../../../CustomLink";
 import { BsFillPersonCheckFill } from "react-icons/bs";

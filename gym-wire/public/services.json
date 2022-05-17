@@ -1,0 +1,43 @@
+[{
+            "id": 1,
+            "name": "ONE TO ONE COACHING",
+            "price": "300",
+            "description": "A one to one health and lifestyle overhaul for people who need the extra accountability and guidance to reach their goals.",
+            "img": "https://i.ibb.co/DCqN4sg/s1.png"
+      },
+      {
+            "id": 2,
+            "name": "WHEEL ALIGNMENT",
+            "price": "100",
+            "description": "​Transform your mindset in as little as 5 weeks - Set meaningful goals, change your habits, gain willpower and boost motivation.",
+            "img": "https://i.ibb.co/bbY1xZs/s3.jpg"
+      },
+      {
+            "id": 3,
+            "name": "3D BODY SCANNING",
+            "price": "150",
+            "description": "A FIT3D scan is a great way to know your starting point & track your progress over time, whether it's weight loss, improving your posture. ",
+            "img": "https://i.ibb.co/mNZKDh4/s4.jpg"
+      },
+      {
+            "id": 4,
+            "name": "NUTRITION COACHING",
+            "price": "180",
+            "description": "Get a handle on your nutrition once and for all with extensive nutrition and habit coaching to ensure you stay on track.",
+            "img": "https://i.ibb.co/LZg0MDd/s2.jpg"
+      },
+      {
+            "id": 5,
+            "name": "CONFIDENCE BOOST",
+            "price": "100",
+            "description": "The side effects of ageing can leave you feeling unhappy with the way you look. Our strength training plans will see you lose body fat, build strong muscles.",
+            "img": "https://i.ibb.co/12HHwj6/s5.jpg"
+      },
+      {
+            "id": 6,
+            "name": "QUALITY OF LIFE",
+            "price": "300",
+            "description": "Expert Personal Training will improve your quality of life by giving you the fitness. The fitter you are, the more of life’s joys you can experience.",
+            "img": "https://i.ibb.co/XjHLJpK/s6.jpg"
+      }
+]

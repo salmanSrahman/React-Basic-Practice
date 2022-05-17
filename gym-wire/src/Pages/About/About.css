@@ -10,13 +10,13 @@
 }
 
 .about_text h3::after {
-      position: absolute;
-      content: '';
-      left: -480px;
-      top: -32px;
-      width: 10px;
-      height: 434px;
-      background: #FF9800;
+    position: absolute;
+    content: '';
+    left: -480px;
+    top: -32px;
+    width: 10px;
+    height: 434px;
+    background: #FF9800;
 }
 
 .about_text p {
@@ -64,20 +64,19 @@
 }
 
 .about_text h2::after {
-      position: absolute;
-      content: '';
-      left: 0;
-      bottom: 0;
-      width: 100px;
-      height: 3px;
-      background: #FF9800;
-      border-radius: 10px;
-      -webkit-border-radius: 10px;
-      -moz-border-radius: 10px;
-      -ms-border-radius: 10px;
-      -o-border-radius: 10px;
+    position: absolute;
+    content: '';
+    left: 0;
+    bottom: 0;
+    width: 100px;
+    height: 3px;
+    background: #FF9800;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
 }
-
 .about_text a {
       color: black;
       font-size: 20px;
@@ -103,23 +102,23 @@
 }
 
 .about_text a::before {
-      position: absolute;
-      content: '';
-      left: -475px;
-      bottom: -175px;
-      width: 362px;
-      height: 10px;
-      background: #FF9800;
+    position: absolute;
+    content: '';
+    left: -475px;
+    bottom: -175px;
+    width: 362px;
+    height: 10px;
+    background: #FF9800;
 }
 
 .about_text a::after {
-      position: absolute;
-      content: '';
-      left: -122px;
-      bottom: -174px;
-      width: 10px;
-      height: 57px;
-      background: #FF9800;
+    position: absolute;
+    content: '';
+    left: -122px;
+    bottom: -174px;
+    width: 10px;
+    height: 57px;
+    background: #FF9800;
 }
 
 .about_img {

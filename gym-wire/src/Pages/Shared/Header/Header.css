@@ -10,8 +10,7 @@
 .navbar {
       background: #000;
 }
-
 .navbar-light .navbar-toggler {
-      color: goldenrod;
-      border-color: goldenrod;
+    color: goldenrod;
+    border-color: goldenrod;
 }
