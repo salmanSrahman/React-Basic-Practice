@@ -1,0 +1,10 @@
+.contact-part {
+      padding: 3rem 0;
+}
+
+.contact-part img {
+      height: 30rem;
+      width: 100%;
+      object-fit: contain;
+
+}
