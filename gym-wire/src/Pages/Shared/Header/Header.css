@@ -1,0 +1,17 @@
+.nav-menu a {
+      color: #fff;
+      font-weight: bold;
+      padding: 4px 30px 8px 30px;
+      font-size: 1rem;
+      text-transform: uppercase;
+      margin: 0 5px;
+}
+
+.navbar {
+      background: #000;
+}
+
+.navbar-light .navbar-toggler {
+      color: goldenrod;
+      border-color: goldenrod;
+}
