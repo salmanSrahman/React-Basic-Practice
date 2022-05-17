@@ -1,0 +1,18 @@
+.blog-container {
+      padding: 4rem 0;
+}
+
+.blog-img img {
+      height: 300px;
+      width: 100%;
+}
+
+.blog-des {
+      padding: 10px
+}
+
+.blog-card {
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      height: 700px;
+
+}
