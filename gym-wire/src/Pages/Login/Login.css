@@ -1,0 +1,93 @@
+.social-sign {
+      background-color: rgb(239, 239, 239);
+      padding: 16px;
+      border-radius: 16px;
+      cursor: pointer;
+      margin-bottom: 10px;
+}
+
+.social {
+      font-size: 16px;
+}
+
+.sign1 {
+      border: 1px solid #f02290;
+}
+
+.sign2 {
+      border: 1px solid #0D6EFD;
+}
+
+.sign3 {
+      border: 1px solid black;
+}
+
+.sign1:hover {
+      background: rgba(240, 34, 144, .1);
+}
+
+.sign2:hover {
+      background: rgba(11, 134, 238, .1);
+}
+
+.sign3:hover {
+      background: rgba(33, 38, 59, .1);
+}
+
+.or-style {
+      position: relative;
+}
+
+.or-style::after {
+      position: absolute;
+      content: '';
+      left: 0;
+      bottom: 55%;
+      width: 45%;
+      height: 1px;
+      background: #21263b7c;
+}
+
+.or-style::before {
+      position: absolute;
+      content: '';
+      right: 0;
+      bottom: 55%;
+      width: 45%;
+      height: 1px;
+      background: #21263b7c;
+}
+
+.or-style p {
+      color: #21263b7c;
+}
+
+.login-form input {
+      padding: 20px 65px;
+      border: 1px solid #21263b7c;
+      border-radius: 15px;
+
+
+}
+
+.form-control:focus {
+      color: #212529;
+      background-color: #fff;
+      border-color: #86b7fe;
+      outline: 0;
+      box-shadow: none !important;
+}
+
+.form-inner {
+      position: relative;
+}
+
+.form-icon {
+      position: absolute;
+      left: 10px;
+      top: 15px;
+
+
+}
+
+@media only screen and (max-width: 700px) {}
