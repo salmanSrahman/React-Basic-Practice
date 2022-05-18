@@ -1,10 +1,10 @@
 import React from "react";
 import { Button, Col } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Service = ({ service }) => {
-  const { img, name, price, description } = service;
-  const navigate = useNavigate();
+  const { img, name, price, description, id } = service;
+
   return (
     <div>
       <Col>
@@ -14,13 +14,8 @@ const Service = ({ service }) => {
           <h5>${price}</h5>
           <p>{description}</p>
           <div>
-            <Button
-              variant="dark"
-              onClick={() => {
-                navigate("/checkout");
-              }}
-            >
-              Select One
+            <Button variant="dark">
+              <Link to={`/service/${id}`}>Select One</Link>
             </Button>
           </div>
         </div>

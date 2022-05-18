@@ -2,8 +2,12 @@ import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import profile from "../../images/profile.jpg";
 import "./About.css";
+import useServices from "../../Hooks/useServices";
 
 const About = () => {
+  const [services] = useServices([]);
+  console.log(services);
+
   return (
     <div className="about_part">
       <Container>
@@ -33,11 +37,11 @@ const About = () => {
                 Although I am a web desginer now but, my dream is to be a full
                 stack web developer. Recently I'm learning web development from
                 webprogrammingHero.com what is mainly focusd in front end
-                development specialized with React Js framework.
-                I am working hard to learn web development with full
-                dedication and passion. My dream is to get a job in any
-                international company as a web developer and I am fully confident that within next 3-4 months I will touch my dream.
-                That's my mission.
+                development specialized with React Js framework. I am working
+                hard to learn web development with full dedication and passion.
+                My dream is to get a job in any international company as a web
+                developer and I am fully confident that within next 3-4 months I
+                will touch my dream. That's my mission.
               </p>
               <a href="#"> Download Resume</a>
             </div>

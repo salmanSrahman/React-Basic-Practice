@@ -14,6 +14,7 @@ import ContactMessage from "./Pages/Contact/ContactMessage/ContactMessage";
 import NotFound from "./Pages/NotFound/NotFound";
 import CheckOut from "./Pages/CheckOut/CheckOut";
 import RequireAuth from "./Pages/RequireAuth/RequireAuth";
+import ServiceDetails from "./Pages/Services/ServiceDetails/ServiceDetails";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/home" element={<Home />}></Route>
         <Route path="/about" element={<About />}></Route>
         <Route path="/services" element={<Services />}></Route>
+        <Route path="/service/:serviceId" element={<ServiceDetails/>}></Route>
         <Route path="/testimonials" element={<Testimonials />}></Route>
         <Route path="/blogs" element={<Blogs />}></Route>
         <Route path="/login" element={<Login />}></Route>

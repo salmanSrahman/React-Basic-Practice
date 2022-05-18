@@ -1,12 +1,10 @@
 import React from "react";
 import { Container, Row } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
 import useServices from "../../Hooks/useServices";
 import Service from "./Service/Service";
 import "./Services.css";
 
 const Services = () => {
-  const navigate = useNavigate();
   const [services] = useServices([]);
 
   return (
@@ -18,12 +16,6 @@ const Services = () => {
             <Service service={service} key={service.id}></Service>
           ))}
         </Row>
-        <button
-          className="d-block mx-auto my-5 custom-btn"
-          onClick={() => navigate("/home")}
-        >
-          Back Home
-        </button>
       </Container>
     </div>
   );
