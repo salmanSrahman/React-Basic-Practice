@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Country from "./Components/Country/Country";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Row } from "react-bootstrap";
+import Counter from "./Components/Counter/Counter";
 
 function App() {
   const [countries, setCountries] = useState([]);
@@ -13,6 +14,7 @@ function App() {
 
   return (
     <div>
+      <Counter />
       <h1 className="text-center">All Countries</h1>
       <Container>
         <Row md={3} className="g-2">
