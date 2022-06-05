@@ -1,0 +1,9 @@
+.country-container {
+      border: 1px solid red;
+      padding: 10px;
+}
+
+.country-container img {
+      height: 200px;
+
+}
