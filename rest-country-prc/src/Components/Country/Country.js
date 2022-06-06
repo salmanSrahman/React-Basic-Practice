@@ -3,7 +3,7 @@ import { Col } from "react-bootstrap";
 import "./Country.css";
 
 const Country = (props) => {
-  console.log(props.country);
+ 
   const { name, flags, capital, region } = props.country;
 
   return (
