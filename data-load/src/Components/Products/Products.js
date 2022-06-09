@@ -17,9 +17,9 @@ const Products = () => {
       <Container>
         <Row>
           <Col>
-            <Row md={2}>
+            <Row md={2} className="g-4">
               {products.map((product) => (
-                <Product product={product}></Product>
+                <Product key={product.id} product={product}></Product>
               ))}
             </Row>
           </Col>
